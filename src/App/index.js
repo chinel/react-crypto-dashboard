@@ -1,11 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AppLayout from "./AppLayout";
+import WelcomeMessage from "./WelcomeMessage";
 
 function App() {
   return (
-    <div>
-     Hello World
-    </div>
+    <AppLayout>
+      <WelcomeMessage />
+    </AppLayout>
   );
 }
 
