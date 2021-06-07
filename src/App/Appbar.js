@@ -8,6 +8,7 @@ const Logo = styled.div`
 const Bar = styled.div`
   display: grid;
   grid-template-columns: 180px auto 100px 100px;
+  margin-bottom: 40px;
 `;
 
 const ControlButtonElem = styled.div`
