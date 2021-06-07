@@ -20,6 +20,10 @@ const ControlButtonElem = styled.div`
     `}
 `;
 
+function toProperCase(lower) {
+  return lower.chartAt(0).toProperCase() + lower.substr(1);
+}
+
 function ControlButton({ name, active }) {
   return <ControlButtonElem active={active}>{name}</ControlButtonElem>;
 }
@@ -29,8 +33,8 @@ const Appbar = () => {
     <Bar>
       <Logo>CryptoDash</Logo>
       <div />
-      <ControlButtonElem name="Dashboard" />
-      <ControlButtonElem name="Settings" />
+      <ControlButtonElem name="dashboard" />
+      <ControlButtonElem name="settings" />
     </Bar>
   );
 };
