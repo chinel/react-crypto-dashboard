@@ -7,6 +7,7 @@ export class AppProvider extends React.Component {
     super(props);
     this.state = {
       page: "dashboard",
+      setPage: this.setState,
     };
   }
 
@@ -14,7 +15,7 @@ export class AppProvider extends React.Component {
 
   render() {
     return (
-      <AppContext.Provider value={this.state}>
+      <AppContext.Provider value={(this.state)}>
         {this.props.children}
       </AppContext.Provider>
     );
