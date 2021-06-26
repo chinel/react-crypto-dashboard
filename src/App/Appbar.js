@@ -25,14 +25,11 @@ function toProperCase(lower) {
   return lower.charAt(0).toUpperCase() + lower.substr(1);
 }
 
-function ControlButton({ name, active }) {
+function ControlButton({ name }) {
   return (
     <AppContext.Consumer>
       {({ page, setPage }) => (
-        <ControlButtonElem
-          onClick={() => setPage(page)}
-          active={page === active}
-        >
+        <ControlButtonElem onClick={() => setPage(name)} active={page === name}>
           {toProperCase(name)}
         </ControlButtonElem>
       )}
@@ -45,7 +42,7 @@ const Appbar = () => {
     <Bar>
       <Logo>CryptoDash</Logo>
       <div />
-      <ControlButton active name="dashboard" />
+      <ControlButton name="dashboard" />
       <ControlButton name="settings" />
     </Bar>
   );
