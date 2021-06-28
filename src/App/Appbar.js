@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { AppContext } from "./AppProvider";
 
 const Logo = styled.div`
   font-size: 1.5em;
@@ -21,11 +22,19 @@ const ControlButtonElem = styled.div`
 `;
 
 function toProperCase(lower) {
-  return lower.chartAt(0).toProperCase() + lower.substr(1);
+  return lower.charAt(0).toUpperCase() + lower.substr(1);
 }
 
-function ControlButton({ name, active }) {
-  return <ControlButtonElem active={active}>{name}</ControlButtonElem>;
+function ControlButton({ name }) {
+  return (
+    <AppContext.Consumer>
+      {({ page, setPage }) => (
+        <ControlButtonElem onClick={() => setPage(name)} active={page === name}>
+          {toProperCase(name)}
+        </ControlButtonElem>
+      )}
+    </AppContext.Consumer>
+  );
 }
 
 const Appbar = () => {
@@ -33,8 +42,8 @@ const Appbar = () => {
     <Bar>
       <Logo>CryptoDash</Logo>
       <div />
-      <ControlButtonElem name="dashboard" />
-      <ControlButtonElem name="settings" />
+      <ControlButton name="dashboard" />
+      <ControlButton name="settings" />
     </Bar>
   );
 };
