@@ -7,11 +7,20 @@ const ConfirmButtonStyed = styled.div`
   color: green;
 `;
 
+export const CenterDiv = styled.div`
+  display: grid;
+  justify-content: center;
+`;
+
 export default function ConfirmButton() {
   return (
     <AppContext.Consumer>
       {({ confirmFavorites }) => (
-        <ConfirmButtonStyed>Confirm Favorites</ConfirmButtonStyed>
+        <CenterDiv>
+          <ConfirmButtonStyed onClick={confirmFavorites}>
+            Confirm Favorites
+          </ConfirmButtonStyed>
+        </CenterDiv>
       )}
     </AppContext.Consumer>
   );
