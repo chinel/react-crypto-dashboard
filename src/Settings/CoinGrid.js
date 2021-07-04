@@ -15,3 +15,5 @@ const CoinGrid = () => {
     </AppContext.Consumer>
   );
 };
+
+export default CoinGrid;
