@@ -12,8 +12,8 @@ const CoinGrid = () => {
     <AppContext.Consumer>
       {({ coinList }) => (
         <CoinGridStyled>
-          {Object.keys(coinList).map((coinKey) => (
-            <div>{coinKey}</div>
+          {Object.keys(coinList).map((coinKey, index) => (
+            <div key={index}>{coinKey}</div>
           ))}
         </CoinGridStyled>
       )}
