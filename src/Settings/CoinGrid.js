@@ -6,6 +6,7 @@ import { Tile } from "../Shared/Tile";
 export const CoinGridStyled = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  grid-gap: 15px;
 `;
 
 const CoinGrid = () => {
