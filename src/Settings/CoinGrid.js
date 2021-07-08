@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { AppContext } from "../App/AppProvider";
 import { SelectableTile } from "../Shared/Tile";
+import CoinTile from "./CoinTile";
 
 export const CoinGridStyled = styled.div`
   display: grid;
@@ -19,7 +20,7 @@ const CoinGrid = () => {
       {({ coinList }) => (
         <CoinGridStyled>
           {getCoinsToDisplay.map((coinKey, index) => (
-            <SelectableTile key={index}>{coinKey}</SelectableTile>
+            <CoinTile key={index}>{coinKey}</CoinTile>
           ))}
         </CoinGridStyled>
       )}
