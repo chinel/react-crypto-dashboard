@@ -9,12 +9,16 @@ export const CoinGridStyled = styled.div`
   grid-gap: 15px;
 `;
 
+const getCoinsToDisplay = (coinList) => {
+  return Object.keys(coinList).slice(0, 100);
+};
+
 const CoinGrid = () => {
   return (
     <AppContext.Consumer>
       {({ coinList }) => (
         <CoinGridStyled>
-          {Object.keys(coinList).map((coinKey, index) => (
+          {getCoinsToDisplay.map((coinKey, index) => (
             <SelectableTile key={index}>{coinKey}</SelectableTile>
           ))}
         </CoinGridStyled>
