@@ -19,7 +19,7 @@ const CoinGrid = () => {
     <AppContext.Consumer>
       {({ coinList }) => (
         <CoinGridStyled>
-          {getCoinsToDisplay.map((coinKey, index) => (
+          {getCoinsToDisplay(coinList).map((coinKey, index) => (
             <CoinTile key={index} coinKey={coinKey} />
           ))}
         </CoinGridStyled>
