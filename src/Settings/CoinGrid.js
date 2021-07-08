@@ -20,7 +20,7 @@ const CoinGrid = () => {
       {({ coinList }) => (
         <CoinGridStyled>
           {getCoinsToDisplay.map((coinKey, index) => (
-            <CoinTile key={index}>{coinKey}</CoinTile>
+            <CoinTile key={index} coinKey={coinKey} />
           ))}
         </CoinGridStyled>
       )}
