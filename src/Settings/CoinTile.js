@@ -11,7 +11,7 @@ const CoinTile = ({ coinKey }) => {
         const TileClass = SelectableTile;
         return (
           <TileClass>
-            <CoinHeaderGrid name={coin.CoinName} symbol={coin.symbol} />
+            <CoinHeaderGrid name={coin.CoinName} symbol={coin.Symbol} />
           </TileClass>
         );
       }}
