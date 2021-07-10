@@ -8,7 +8,7 @@ const CoinTile = ({ coinKey }) => {
       {({ coinList }) => {
         let coin = coinList[coinKey];
         const TileClass = SelectableTile;
-        return <TileClass>{coinKey}</TileClass>;
+        return <TileClass>{coin.CoinName}</TileClass>;
       }}
     </AppContext.Consumer>
   );
