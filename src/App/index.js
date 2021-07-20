@@ -1,4 +1,5 @@
 import Settings from "../Settings";
+import Content from "../Shared/Content";
 import "./App.css";
 import Appbar from "./Appbar";
 import AppLayout from "./AppLayout";
@@ -9,7 +10,9 @@ function App() {
     <AppLayout>
       <AppProvider>
         <Appbar />
-        <Settings />
+        <Content>
+          <Settings />
+        </Content>
       </AppProvider>
     </AppLayout>
   );
