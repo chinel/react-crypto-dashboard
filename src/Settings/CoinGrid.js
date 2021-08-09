@@ -12,7 +12,7 @@ export const CoinGridStyled = styled.div`
 `;
 
 const getCoinsToDisplay = (coinList, topSection) => {
-  return Object.keys(coinList).slice(0, 100);
+  return Object.keys(coinList).slice(0, topSection ? 10 : 100);
 };
 
 const CoinGrid = ({ topSection }) => {
