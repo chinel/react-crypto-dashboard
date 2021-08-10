@@ -21,7 +21,7 @@ const CoinGrid = ({ topSection }) => {
       {({ coinList }) => (
         <CoinGridStyled>
           {getCoinsToDisplay(coinList, topSection).map((coinKey, index) => (
-            <CoinTile key={index} coinKey={coinKey} />
+            <CoinTile topSection={topSection} key={index} coinKey={coinKey} />
           ))}
         </CoinGridStyled>
       )}

@@ -4,7 +4,7 @@ import CoinImage from "../Shared/CoinImage";
 import { SelectableTile } from "../Shared/Tile";
 import CoinHeaderGrid from "./CoinHeaderGrid";
 
-const CoinTile = ({ coinKey }) => {
+const CoinTile = ({ coinKey, topSection }) => {
   return (
     <AppContext.Consumer>
       {({ coinList }) => {
