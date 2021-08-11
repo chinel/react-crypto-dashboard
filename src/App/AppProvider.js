@@ -8,6 +8,7 @@ export class AppProvider extends React.Component {
     super(props);
     this.state = {
       page: "dashboard",
+      favorites: [],
       ...this.savedSettings(),
       setPage: this.setPage,
       confirmFavorites: this.confirmFavorites,
