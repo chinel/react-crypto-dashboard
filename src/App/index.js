@@ -1,3 +1,4 @@
+import React from "react";
 import Settings from "../Settings";
 import Content from "../Shared/Content";
 import "./App.css";
