@@ -38,6 +38,8 @@ export class AppProvider extends React.Component {
     }
   };
 
+  isInFavorites = (key) => _.includes(this.states.favorites, key);
+
   removeCoin = (key) => {
     let favorites = [...this.states.favorites];
     this.setState({ favorites: _.pull(favorites, key) });
