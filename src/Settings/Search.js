@@ -1,8 +1,8 @@
 import React from "react";
-import styled  from "styled-components";
+import styled from "styled-components";
 
 const Search = () => {
-return 
-}
+  return <div>Search</div>;
+};
 
 export default Search;
