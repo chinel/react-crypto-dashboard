@@ -70,6 +70,8 @@ export class AppProvider extends React.Component {
 
   setPage = (page) => this.setState({ page });
 
+  setFilteredCoins = (filteredCoins) => this.setState({ filteredCoins });
+
   render() {
     return (
       <AppContext.Provider value={this.state}>
