@@ -17,6 +17,7 @@ export class AppProvider extends React.Component {
       removeCoin: this.removeCoin,
       isInFavorites: this.isInFavorites,
       confirmFavorites: this.confirmFavorites,
+      setFilteredCoins: this.setFilteredCoins,
     };
   }
 
