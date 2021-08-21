@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { backgroundColor2, fontSize2 } from "../Shared/Styles";
+import { AppContext } from "../App/AppProvider";
 
 const SearchGrid = styled.div`
   display: grid;
@@ -17,10 +18,14 @@ const SearchInput = styled.input`
 
 const Search = () => {
   return (
-    <SearchGrid>
-      <h2>Search all coins</h2>
-      <SearchInput />
-    </SearchGrid>
+    <AppContext.Consumer>
+      {({ setFilteredCoins, coinList }) => (
+        <SearchGrid>
+          <h2>Search all coins</h2>
+          <SearchInput />
+        </SearchGrid>
+      )}
+    </AppContext.Consumer>
   );
 };
 
