@@ -16,6 +16,10 @@ const SearchInput = styled.input`
   place-self: center left; // shorthand for align self center and justify self left
 `;
 
+const filterCoins = (e, setFilteredCoins, coinList) => {
+  let inputValue = e.target.value;
+};
+
 const Search = () => {
   return (
     <AppContext.Consumer>
