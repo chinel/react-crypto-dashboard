@@ -22,7 +22,9 @@ const Search = () => {
       {({ setFilteredCoins, coinList }) => (
         <SearchGrid>
           <h2>Search all coins</h2>
-          <SearchInput />
+          <SearchInput
+            onKeyUp={(e) => filterCoins(e, setFilteredCoins, coinList)}
+          />
         </SearchGrid>
       )}
     </AppContext.Consumer>
