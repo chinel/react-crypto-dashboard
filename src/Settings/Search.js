@@ -16,6 +16,9 @@ const SearchInput = styled.input`
   place-self: center left; // shorthand for align self center and justify self left
 `;
 
+const handleFilter = _.debounce((inputValue, coinList, setFilterCoins) => {},
+500);
+
 const filterCoins = (e, setFilteredCoins, coinList) => {
   let inputValue = e.target.value;
 };
