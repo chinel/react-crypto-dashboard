@@ -16,11 +16,20 @@ const SearchInput = styled.input`
   place-self: center left; // shorthand for align self center and justify self left
 `;
 
-const handleFilter = _.debounce((inputValue, coinList, setFilterCoins) => {},
-500);
+//this debounce function delays will be used to delay the filter event by half a second
+//this prevents us from firing an event anytime the user types in the search input
+//It only fires the event after half a second
+const handleFilter = _.debounce((inputValue, coinList, setFilteredCoins) => {
+  //Get all the coin symbols
+  let coinSymbols = Object.keys(coinList);
+  //Get all the coin names, map symbol to name
+  let coinNames = coinSymbols.map((sym) => coinList[sym].CoinName);
+  let allStringsToSearch = coinSymbols.concat(coinNames);
+}, 500);
 
 const filterCoins = (e, setFilteredCoins, coinList) => {
   let inputValue = e.target.value;
+  handleFilter(inputValue, coinList, setFilteredCoins);
 };
 
 const Search = () => {
