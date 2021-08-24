@@ -11,8 +11,10 @@ export const CoinGridStyled = styled.div`
   margin-top: 40px;
 `;
 
+function getLowerSectionCoins() {}
+
 const getCoinsToDisplay = (coinList, topSection, favorites) => {
-  return topSection ? favorites : Object.keys(coinList).slice(0, 100);
+  return topSection ? favorites : getLowerSectionCoins();
 };
 
 const CoinGrid = ({ topSection }) => {
