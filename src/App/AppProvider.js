@@ -48,10 +48,15 @@ export class AppProvider extends React.Component {
   };
 
   confirmFavorites = () => {
-    this.setState({
-      firstVisit: false,
-      page: "dashboard",
-    });
+    this.setState(
+      {
+        firstVisit: false,
+        page: "dashboard",
+      },
+      () => {
+        this.fetchPrices();
+      }
+    );
     localStorage.setItem(
       "cryptoDash",
       JSON.stringify({
