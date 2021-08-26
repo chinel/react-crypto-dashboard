@@ -32,6 +32,11 @@ export class AppProvider extends React.Component {
     this.setState({ coinList: coinList.Data });
   };
 
+  fetchPrices = async () => {
+    let prices = await this.prices();
+    this.setState({ prices });
+  };
+
   addCoin = (key) => {
     let favorites = [...this.states.favorites];
     if (favorites.length < MAX_FAVORITES) {
