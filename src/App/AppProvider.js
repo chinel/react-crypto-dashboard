@@ -34,7 +34,21 @@ export class AppProvider extends React.Component {
 
   fetchPrices = async () => {
     let prices = await this.prices();
+    console.log(prices);
     this.setState({ prices });
+  };
+
+  prices = async () => {
+    let returnData = [];
+    for (let i = 0; i < this.state.favorites.length; i++) {
+      try {
+        let priceData = await cc.priceFull(this.state.favorites[i], "USD");
+        returnData.push(priceData);
+      } catch (e) {
+        console.warn("Fetch price error", e);
+      }
+    }
+    return returnData;
   };
 
   addCoin = (key) => {
