@@ -24,6 +24,7 @@ export class AppProvider extends React.Component {
   componentDidMount() {
     console.log("am here");
     this.fetchCoins();
+    this.fetchPrices();
   }
 
   fetchCoins = async () => {
