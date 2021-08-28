@@ -34,6 +34,7 @@ export class AppProvider extends React.Component {
   };
 
   fetchPrices = async () => {
+    if (this.state.firstVisit) return;
     let prices = await this.prices();
     console.log(prices);
     this.setState({ prices });
