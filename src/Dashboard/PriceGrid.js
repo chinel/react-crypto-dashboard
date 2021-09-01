@@ -10,11 +10,11 @@ const PriceGrid = () => {
   return (
     <AppContext.Consumer>
       {({ prices }) => (
-        <PriceGrid>
+        <PriceGridStyled>
           {prices.map((prices) => (
             <div>Price</div>
           ))}
-        </PriceGrid>
+        </PriceGridStyled>
       )}
     </AppContext.Consumer>
   );
