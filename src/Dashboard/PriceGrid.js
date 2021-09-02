@@ -11,8 +11,8 @@ const PriceGrid = () => {
     <AppContext.Consumer>
       {({ prices }) => (
         <PriceGridStyled>
-          {prices.map((prices) => (
-            <div>Price</div>
+          {prices.map((price) => (
+            <div>{Object.keys(price)[0]}</div>
           ))}
         </PriceGridStyled>
       )}
