@@ -21,7 +21,7 @@ const PriceTileDiv = ({ sym, data }) => {
     <PriceTileStyled>
       <CoinHeaderGridStyled>
         <div>{sym}</div>
-        <div>{data.CHANGEPCT24HOUR}</div>
+        <div>{numberFormat(data.CHANGEPCT24HOUR)}</div>
       </CoinHeaderGridStyled>
     </PriceTileStyled>
   );
@@ -30,11 +30,7 @@ const PriceTileDiv = ({ sym, data }) => {
 const PriceTile = ({ price, index }) => {
   let sym = Object.keys(price)[0];
   let data = price[sym]["USD"];
-  return (
-    <PriceTileDiv sym={sym} data={data}>
-      {sym} {data.PRICE}
-    </PriceTileDiv>
-  );
+  return <PriceTileDiv sym={sym} data={data}></PriceTileDiv>;
 };
 
 export default PriceTile;
