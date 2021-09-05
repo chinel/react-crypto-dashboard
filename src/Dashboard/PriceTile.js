@@ -4,6 +4,10 @@ import { CoinHeaderGridStyled } from "../Settings/CoinHeaderGrid";
 import { fontSize3 } from "../Shared/Styles";
 import { SelectableTile } from "../Shared/Tile";
 
+const numberFormat = (number) => {
+  return +(number + "").slice(0, 7);
+};
+
 const PriceTileStyled = styled(SelectableTile)`
   ${(props) =>
     props.compact &&
