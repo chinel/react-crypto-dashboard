@@ -27,9 +27,9 @@ const PriceTile = ({ price, index }) => {
   let sym = Object.keys(price)[0];
   let data = price[sym]["USD"];
   return (
-    <PriceTileStyled compact={index >= 5}>
+    <PriceTileDiv sym={sym} data={data}>
       {sym} {data.PRICE}
-    </PriceTileStyled>
+    </PriceTileDiv>
   );
 };
 
