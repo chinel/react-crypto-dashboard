@@ -1,8 +1,12 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { CoinHeaderGridStyled } from "../Settings/CoinHeaderGrid";
-import { fontSize3 } from "../Shared/Styles";
+import { fontSize3, fontSizeBig } from "../Shared/Styles";
 import { SelectableTile } from "../Shared/Tile";
+
+const JustifyRight = styled.div`
+  justify-self: right;
+`;
 
 const numberFormat = (number) => {
   return +(number + "").slice(0, 7);
@@ -21,7 +25,7 @@ const PriceTileDiv = ({ sym, data }) => {
     <PriceTileStyled>
       <CoinHeaderGridStyled>
         <div>{sym}</div>
-        <div>{numberFormat(data.CHANGEPCT24HOUR)}</div>
+        <JustifyRight>{numberFormat(data.CHANGEPCT24HOUR)}</JustifyRight>
       </CoinHeaderGridStyled>
     </PriceTileStyled>
   );
