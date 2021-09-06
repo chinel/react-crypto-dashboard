@@ -8,6 +8,10 @@ const JustifyRight = styled.div`
   justify-self: right;
 `;
 
+const TickerPrice = styled.div`
+  ${fontSizeBig}
+`;
+
 const numberFormat = (number) => {
   return +(number + "").slice(0, 7);
 };
@@ -27,6 +31,7 @@ const PriceTileDiv = ({ sym, data }) => {
         <div>{sym}</div>
         <JustifyRight>{numberFormat(data.CHANGEPCT24HOUR)}</JustifyRight>
       </CoinHeaderGridStyled>
+      <TickerPrice>${numberFormat(data.PRICE)}</TickerPrice>
     </PriceTileStyled>
   );
 };
