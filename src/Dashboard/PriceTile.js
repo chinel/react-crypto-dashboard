@@ -12,6 +12,10 @@ const TickerPrice = styled.div`
   ${fontSizeBig}
 `;
 
+const ChangePct = styled.div`
+  color: green;
+`;
+
 const numberFormat = (number) => {
   return +(number + "").slice(0, 7);
 };
@@ -29,7 +33,9 @@ const PriceTileDiv = ({ sym, data }) => {
     <PriceTileStyled>
       <CoinHeaderGridStyled>
         <div>{sym}</div>
-        <JustifyRight>{numberFormat(data.CHANGEPCT24HOUR)}</JustifyRight>
+        <JustifyRight>
+          <ChangePct>{numberFormat(data.CHANGEPCT24HOUR)}</ChangePct>
+        </JustifyRight>
       </CoinHeaderGridStyled>
       <TickerPrice>${numberFormat(data.PRICE)}</TickerPrice>
     </PriceTileStyled>
