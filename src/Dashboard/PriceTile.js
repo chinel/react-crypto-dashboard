@@ -33,16 +33,22 @@ const PriceTileStyled = styled(SelectableTile)`
     `}
 `;
 
+const ChangePercent = ({ data }) => {
+  return (
+    <JustifyRight>
+      <ChangePct red={data.CHANGEPCT24HOUR < 0}>
+        {numberFormat(data.CHANGEPCT24HOUR)}
+      </ChangePct>
+    </JustifyRight>
+  );
+};
+
 const PriceTileDiv = ({ sym, data }) => {
   return (
     <PriceTileStyled>
       <CoinHeaderGridStyled>
         <div>{sym}</div>
-        <JustifyRight>
-          <ChangePct red={data.CHANGEPCT24HOUR < 0}>
-            {numberFormat(data.CHANGEPCT24HOUR)}
-          </ChangePct>
-        </JustifyRight>
+        <ChangePercent data={data} />
       </CoinHeaderGridStyled>
       <TickerPrice>${numberFormat(data.PRICE)}</TickerPrice>
     </PriceTileStyled>
