@@ -55,6 +55,18 @@ const PriceTileDiv = ({ sym, data }) => {
   );
 };
 
+const PriceTileCompact = ({ sym, data }) => {
+  return (
+    <PriceTileStyled>
+      <CoinHeaderGridStyled>
+        <div>{sym}</div>
+        <ChangePercent data={data} />
+      </CoinHeaderGridStyled>
+      <TickerPrice>${numberFormat(data.PRICE)}</TickerPrice>
+    </PriceTileStyled>
+  );
+};
+
 const PriceTile = ({ price, index }) => {
   let sym = Object.keys(price)[0];
   let data = price[sym]["USD"];
