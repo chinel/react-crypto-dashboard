@@ -57,7 +57,7 @@ const PriceTileDiv = ({ sym, data }) => {
 
 const PriceTileCompact = ({ sym, data }) => {
   return (
-    <PriceTileStyled>
+    <PriceTileStyled compact>
       <CoinHeaderGridStyled>
         <div>{sym}</div>
         <ChangePercent data={data} />
@@ -70,7 +70,8 @@ const PriceTileCompact = ({ sym, data }) => {
 const PriceTile = ({ price, index }) => {
   let sym = Object.keys(price)[0];
   let data = price[sym]["USD"];
-  return <PriceTileDiv sym={sym} data={data}></PriceTileDiv>;
+  let TileClass = index < 5 ? PriceTileDiv : PriceTileCompact;
+  return <TileClass sym={sym} data={data}></TileClass>;
 };
 
 export default PriceTile;
