@@ -8,6 +8,10 @@ const JustifyRight = styled.div`
   justify-self: right;
 `;
 
+const JustifyLeft = styled.div`
+  justify-self: left;
+`;
+
 const TickerPrice = styled.div`
   ${fontSizeBig}
 `;
@@ -29,7 +33,11 @@ const PriceTileStyled = styled(SelectableTile)`
   ${(props) =>
     props.compact &&
     css`
-      ${fontSize3}
+      display: grid;
+      ${fontSize3};
+      grid-gap: 5px;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: right;
     `}
 `;
 
@@ -58,11 +66,9 @@ const PriceTileDiv = ({ sym, data }) => {
 const PriceTileCompact = ({ sym, data }) => {
   return (
     <PriceTileStyled compact>
-      <CoinHeaderGridStyled>
-        <div>{sym}</div>
-        <ChangePercent data={data} />
-      </CoinHeaderGridStyled>
-      <TickerPrice>${numberFormat(data.PRICE)}</TickerPrice>
+      <JustifyLeft>{sym}</JustifyLeft>
+      <ChangePercent data={data} />
+      <div>${numberFormat(data.PRICE)}</div>
     </PriceTileStyled>
   );
 };
