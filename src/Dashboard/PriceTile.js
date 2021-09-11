@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { CoinHeaderGridStyled } from "../Settings/CoinHeaderGrid";
-import { fontSize3, fontSizeBig } from "../Shared/Styles";
+import { fontSize3, fontSizeBig, greenBoxShadow } from "../Shared/Styles";
 import { SelectableTile } from "../Shared/Tile";
 
 const JustifyRight = styled.div`
@@ -38,6 +38,13 @@ const PriceTileStyled = styled(SelectableTile)`
       grid-gap: 5px;
       grid-template-columns: repeat(3, 1fr);
       justify-items: right;
+    `}
+
+  ${(props) =>
+    props.currentFavorite &&
+    css`
+      ${greenBoxShadow}
+      pointer-events: none;
     `}
 `;
 

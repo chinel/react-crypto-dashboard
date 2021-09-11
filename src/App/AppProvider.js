@@ -94,8 +94,8 @@ export class AppProvider extends React.Component {
     if (!cryptoDashData) {
       return { page: "settings", firstVisit: true };
     }
-    let { favorites } = cryptoDashData;
-    return { favorites };
+    let { favorites, currentFavorite } = cryptoDashData;
+    return { favorites, currentFavorite };
   }
 
   setPage = (page) => this.setState({ page });
