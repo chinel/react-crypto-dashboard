@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { AppContext } from "../App/AppProvider";
 import { CoinHeaderGridStyled } from "../Settings/CoinHeaderGrid";
 import { fontSize3, fontSizeBig, greenBoxShadow } from "../Shared/Styles";
 import { SelectableTile } from "../Shared/Tile";
@@ -84,7 +85,17 @@ const PriceTile = ({ price, index }) => {
   let sym = Object.keys(price)[0];
   let data = price[sym]["USD"];
   let TileClass = index < 5 ? PriceTileDiv : PriceTileCompact;
-  return <TileClass sym={sym} data={data}></TileClass>;
+  return (
+    <AppContext.Consumer>
+      {({ currentFavorite }) => {
+        <TileClass
+          sym={sym}
+          data={data}
+          currentFavorite={currentFavorite === sym}
+        ></TileClass>;
+      }}
+    </AppContext.Consumer>
+  );
 };
 
 export default PriceTile;
