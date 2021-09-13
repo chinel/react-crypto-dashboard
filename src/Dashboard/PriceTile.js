@@ -59,9 +59,9 @@ const ChangePercent = ({ data }) => {
   );
 };
 
-const PriceTileDiv = ({ sym, data }) => {
+const PriceTileDiv = ({ sym, data, currentFavorite }) => {
   return (
-    <PriceTileStyled>
+    <PriceTileStyled currentFavorite={currentFavorite}>
       <CoinHeaderGridStyled>
         <div>{sym}</div>
         <ChangePercent data={data} />
@@ -71,9 +71,9 @@ const PriceTileDiv = ({ sym, data }) => {
   );
 };
 
-const PriceTileCompact = ({ sym, data }) => {
+const PriceTileCompact = ({ sym, data, currentFavorite }) => {
   return (
-    <PriceTileStyled compact>
+    <PriceTileStyled compact currentFavorite={currentFavorite}>
       <JustifyLeft>{sym}</JustifyLeft>
       <ChangePercent data={data} />
       <div>${numberFormat(data.PRICE)}</div>
