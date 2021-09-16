@@ -4,7 +4,16 @@ import CoinImage from "../Shared/CoinImage";
 import { Tile } from "../Shared/Tile";
 
 const CoinSpotlight = () => {
-  return <Tile>Hello Spot</Tile>;
+  return (
+    <AppContext.Consumer>
+      {({ currentFavorite, coinList }) => (
+        <Tile>
+          <h2>{coinList[currentFavorite].CoinName}</h2>
+          <CoinImage coin={coinList[currentFavorite]} />
+        </Tile>
+      )}
+    </AppContext.Consumer>
+  );
 };
 
 export default CoinSpotlight;
