@@ -13,8 +13,8 @@ const CoinSpotlight = () => {
     <AppContext.Consumer>
       {({ currentFavorite, coinList }) => (
         <Tile>
-          <h2>{coinList[currentFavorite].CoinName}</h2>
-          <CoinImage coin={coinList[currentFavorite]} />
+          <SpotlightName>{coinList[currentFavorite].CoinName}</SpotlightName>
+          <CoinImage spotlight coin={coinList[currentFavorite]} />
         </Tile>
       )}
     </AppContext.Consumer>
