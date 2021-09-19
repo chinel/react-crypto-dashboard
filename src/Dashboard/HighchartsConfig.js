@@ -1,4 +1,4 @@
-const HighchartsConfig = () => {
+const highchartsConfig = () => {
   return {
     title: {
       text: "Solar Employment Growth by Sector, 2010-2016",
@@ -77,4 +77,4 @@ const HighchartsConfig = () => {
   };
 };
 
-export default HighchartsConfig;
+export default highchartsConfig;
