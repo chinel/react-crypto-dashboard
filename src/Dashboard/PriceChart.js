@@ -7,9 +7,11 @@ import highchartsConfig from "./HighchartsConfig";
 const PriceChart = () => {
   return (
     <AppContext.Consumer>
-      <Tile>
-        <ReactHighcharts config={highchartsConfig()} />
-      </Tile>
+      {() => (
+        <Tile>
+          <ReactHighcharts config={highchartsConfig()} />
+        </Tile>
+      )}
     </AppContext.Consumer>
   );
 };
