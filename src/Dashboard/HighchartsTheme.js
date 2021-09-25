@@ -1,25 +1,21 @@
 const theme = {
   colors: [
-    "#DDDF0D",
-    "#55BF3B",
-    "#DF5353",
-    "#7798BF",
-    "#aaeeee",
-    "#ff0066",
-    "#eeaaee",
-    "#55BF3B",
-    "#DF5353",
-    "#7798BF",
-    "#aaeeee",
+    "#61d936",
+    "#552ccb",
+    "#1163c9",
+    "#04A1EE",
+    "#08C6E0",
+    "#146B9E",
+    "#F376C1",
+    "#1B2839",
   ],
   chart: {
     backgroundColor: "#061a44",
     borderColor: "#000000",
-    borderWidth: 2,
+    borderWidth: 0,
     className: "dark-container",
-    plotBackgroundColor: "rgba(255, 255, 255, .1)",
-    plotBorderColor: "#CCCCCC",
-    plotBorderWidth: 1,
+    plotBackgroundColor: "#061a44",
+    plotBorderWidth: 0,
   },
   title: {
     style: {
@@ -35,7 +31,7 @@ const theme = {
   },
   xAxis: {
     gridLineColor: "#333333",
-    gridLineWidth: 1,
+    gridLineWidth: 0,
     labels: {
       style: {
         color: "#A0A0A0",
@@ -53,6 +49,7 @@ const theme = {
     },
   },
   yAxis: {
+    gridLineWidth: 0,
     gridLineColor: "#333333",
     labels: {
       style: {
