@@ -5,6 +5,7 @@ const cc = require("cryptocompare");
 export const AppContext = React.createContext();
 
 const MAX_FAVORITES = 10;
+const TIME_UNITS = 10;
 export class AppProvider extends React.Component {
   constructor(props) {
     super(props);
@@ -26,6 +27,7 @@ export class AppProvider extends React.Component {
     console.log("am here");
     this.fetchCoins();
     this.fetchPrices();
+    this.fetchHistorical();
   }
 
   fetchCoins = async () => {
@@ -41,6 +43,11 @@ export class AppProvider extends React.Component {
     this.setState({ prices });
   };
 
+  fetchHistorical = async () => {
+    if (this.state.firstVisit) return;
+    let results = await this.historical();
+  };
+
   prices = async () => {
     let returnData = [];
     for (let i = 0; i < this.state.favorites.length; i++) {
@@ -52,6 +59,13 @@ export class AppProvider extends React.Component {
       }
     }
     return returnData;
+  };
+
+  historical = () => {
+    let promises = [];
+    for (let units = TIME_UNITS; units > 0; units--) {
+      promises.push(cc.priceHistorical(this.state.currentFavorite, ["USD"]));
+    }
   };
 
   addCoin = (key) => {
