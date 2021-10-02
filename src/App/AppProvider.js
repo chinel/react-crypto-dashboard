@@ -1,5 +1,6 @@
 import _ from "lodash";
 import React from "react";
+import moment from "moment";
 const cc = require("cryptocompare");
 
 export const AppContext = React.createContext();
@@ -46,6 +47,7 @@ export class AppProvider extends React.Component {
   fetchHistorical = async () => {
     if (this.state.firstVisit) return;
     let results = await this.historical();
+    console.log("results", results);
   };
 
   prices = async () => {
@@ -64,8 +66,15 @@ export class AppProvider extends React.Component {
   historical = () => {
     let promises = [];
     for (let units = TIME_UNITS; units > 0; units--) {
-      promises.push(cc.priceHistorical(this.state.currentFavorite, ["USD"]));
+      promises.push(
+        cc.priceHistorical(
+          this.state.currentFavorite,
+          ["USD"],
+          moment().subtract({ months: units }).toDate()
+        )
+      );
     }
+    return Promise.all(promises);
   };
 
   addCoin = (key) => {
