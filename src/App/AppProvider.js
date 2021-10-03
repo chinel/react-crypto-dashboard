@@ -48,6 +48,18 @@ export class AppProvider extends React.Component {
     if (this.state.firstVisit) return;
     let results = await this.historical();
     console.log("results", results);
+    let historical = [
+      {
+        name: this.state.currentFavorite,
+        data: results.data((ticker, index) => [
+          moment()
+            .subtract({ months: TIME_UNITS - index })
+            .valueOf(),
+          ticker.USD,
+        ]),
+      },
+    ];
+    this.setState({ historical });
   };
 
   prices = async () => {
