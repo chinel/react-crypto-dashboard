@@ -129,6 +129,7 @@ export class AppProvider extends React.Component {
     this.setState(
       {
         currentFavorite: sym,
+        historical: null,
       },
       this.fetchHistorical
     );
