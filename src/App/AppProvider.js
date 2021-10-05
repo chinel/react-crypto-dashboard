@@ -126,9 +126,12 @@ export class AppProvider extends React.Component {
   };
 
   setCurrentFavorite = (sym) => {
-    this.setState({
-      currentFavorite: sym,
-    });
+    this.setState(
+      {
+        currentFavorite: sym,
+      },
+      this.fetchHistorical
+    );
     localStorage.setItem(
       "cryptoDash",
       JSON.stringify({
