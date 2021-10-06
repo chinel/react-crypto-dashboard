@@ -112,11 +112,10 @@ export class AppProvider extends React.Component {
         page: "dashboard",
         currentFavorite,
         price: null,
-        historical: null,
       },
       () => {
         this.fetchPrices();
-        this.fetchHistorical();
+        this.historical();
       }
     );
     localStorage.setItem(
