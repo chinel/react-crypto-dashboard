@@ -35,8 +35,8 @@ function ControlButton({ name }) {
     <AppContext.Consumer>
       {({ firstVisit, page, setPage }) => (
         <ControlButtonElem
-          onClick={() => setPage(name)}
           active={page === name}
+          onClick={() => setPage(name)}
           hidden={firstVisit && page === "dashboard"}
         >
           {toProperCase(name)}
