@@ -13,7 +13,7 @@ const PriceChart = () => {
     <AppContext.Consumer>
       {({ historical }) => (
         <Tile>
-          <ChartSelect>
+          <ChartSelect defaultValue={"months"}>
             <option value="days">Days</option>
             <option value="weeks">Weeks</option>
             <option value="months">Months</option>
