@@ -11,9 +11,12 @@ ReactHighcharts.Highcharts.setOptions(theme);
 const PriceChart = () => {
   return (
     <AppContext.Consumer>
-      {({ historical }) => (
+      {({ historical, changeChartSelect }) => (
         <Tile>
-          <ChartSelect defaultValue={"months"}>
+          <ChartSelect
+            defaultValue={"months"}
+            onChange={(e) => changeChartSelect(e.target.value)}
+          >
             <option value="days">Days</option>
             <option value="weeks">Weeks</option>
             <option value="months">Months</option>
