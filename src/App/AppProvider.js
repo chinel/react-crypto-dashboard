@@ -53,7 +53,7 @@ export class AppProvider extends React.Component {
     let historical = [
       {
         name: this.state.currentFavorite,
-        data: results.data((ticker, index) => [
+        data: results.map((ticker, index) => [
           moment()
             .subtract({ [this.state.timeInterval]: TIME_UNITS - index })
             .valueOf(),
