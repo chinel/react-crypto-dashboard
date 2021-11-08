@@ -20,6 +20,7 @@ const CoinTile = ({ coinKey, topSection }) => {
       {({ coinList, addCoin, removeCoin, isInFavorites }) => {
         let coin = coinList[coinKey];
         let TileClass = SelectableTile;
+        console.log(isInFavorites);
         if (topSection) {
           TileClass = DeletetableTile;
         } else if (isInFavorites(coinKey)) {

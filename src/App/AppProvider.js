@@ -94,17 +94,17 @@ export class AppProvider extends React.Component {
   };
 
   addCoin = (key) => {
-    let favorites = [...this.states.favorites];
+    let favorites = [...this.state.favorites];
     if (favorites.length < MAX_FAVORITES) {
       favorites.push(key);
       this.setState({ favorites });
     }
   };
 
-  isInFavorites = (key) => _.includes(this.states.favorites, key);
+  isInFavorites = (key) => _.includes(this.state.favorites, key);
 
   removeCoin = (key) => {
-    let favorites = [...this.states.favorites];
+    let favorites = [...this.state.favorites];
     this.setState({ favorites: _.pull(favorites, key) });
   };
 

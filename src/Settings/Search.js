@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { backgroundColor2, fontSize2 } from "../Shared/Styles";
 import { AppContext } from "../App/AppProvider";
-import _ from "loadash";
+
 import fuzzy from "fuzzy";
+import _ from "lodash";
 
 const SearchGrid = styled.div`
   display: grid;
