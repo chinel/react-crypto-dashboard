@@ -99,14 +99,14 @@ const PriceTile = ({ price, index }) => {
   let TileClass = index < 5 ? PriceTileDiv : PriceTileCompact;
   return (
     <AppContext.Consumer>
-      {({ currentFavorite, setCurrentFavorite }) => {
+      {({ currentFavorite, setCurrentFavorite }) => (
         <TileClass
           sym={sym}
           data={data}
           currentFavorite={currentFavorite === sym}
           setCurrentFavorite={() => setCurrentFavorite(sym)}
-        ></TileClass>;
-      }}
+        ></TileClass>
+      )}
     </AppContext.Consumer>
   );
 };
